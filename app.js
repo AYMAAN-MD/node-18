@@ -22,6 +22,23 @@ const moment = require('moment');
 
 // init();
 
+
+
+const axios = require('axios');
+
+async function fetchData() {
+  const url = 'https://api.example.com/endpoint';
+
+  try {
+    const response = await axios.get(url);
+    console.log(response.data); // Print the response data
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+
+fetchData();
+
 const pool = new Pool({
     user: process.env.USER_NAME,
     host:process.env.HOST_NAME,
